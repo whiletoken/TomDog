@@ -1,0 +1,85 @@
+spring:
+  application:
+    name: neo
+  redis:
+
+    #redisson:
+    # 配置单点模式
+    #config: classpath:redisson-single-dev.yml
+
+    database: 0
+    host: 47.97.177.55
+    port: 6379
+    password: box123$%^
+    timeout: 0
+    jedis:
+      pool:
+        max-idle: 8
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+
+mybatis:
+
+  # mybatis配置文件所在路径
+  config-location: classpath:mybatis-config.xml
+
+  # 定义所有操作类的别名所在包
+  type-aliases-package: com.tomdog.spring.dao
+
+  # 所有的mapper映射文件
+  mapper-locations: classpath:mapper/*.xml
+
+#prometheus配置
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    jmx:
+      exposure:
+        # 将 Actuator 的 /actuator/prometheus 端点暴露出来
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      # 为指标设置一个Tag，这里设置为应用名，Tag是Prometheus提供的一种能力，从而实现更加灵活的筛选
+      application: ${spring.application.name}
+
+#dubbo 配置
+#dubbo:
+#  application:
+#    name: ${spring.application.name}
+#  scan:
+#    base-packages: com.tomdog.spring
+#  registry:
+#    address: nacos://47.97.177.55:8848
+#  protocol:
+#    name: dubbo
+#    port: 3100
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+
+#Apollo 配置
+#app:
+#  id: proTTT                            #应用ID
+#apollo:
+#  #  cacheDir: /opt/data/                       #配置本地配置缓存目录
+#  cluster: default                           #指定使用哪个集群的配置
+#  meta: http://106.54.227.205:8080            #DEV环境配置中心地址
+#  autoUpdateInjectedSpringProperties: true   #是否开启 Spring 参数自动更新
+#  bootstrap:
+#    enabled: true                            #是否开启 Apollo
+#    namespaces: application                  #设置 Namespace
+#    eagerLoad:
+#      enabled: false                         #将 Apollo 加载提到初始化日志系统之前
+

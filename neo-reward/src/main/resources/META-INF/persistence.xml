@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <!-- 持久化单元 -->
+    <persistence-unit name="mysql-jpa">
+        <!-- 实体类 -->
+        <class>com.tomdog.reward.dto.ReqInfo</class>
+        <class>com.tomdog.reward.dto.NeoMapDto</class>
+        <properties>
+
+            <!-- 使用Hikari连接池实现数据库连接管理 -->
+            <property name="hibernate.connection.provider_class"
+                      value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"/>
+
+            <!-- 数据库方言 -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+            <!-- Hikari数据源 -->
+            <property name="hibernate.hikari.dataSourceClassName"
+                      value="com.zaxxer.hikari.HikariDataSource"/>
+
+            <!-- 空闲时连接池数量 -->
+            <property name="hibernate.hikari.minimumIdle" value="1"/>
+
+            <!-- 连接池最大数量 -->
+            <property name="hibernate.hikari.maximumPoolSize" value="4"/>
+
+            <!-- 连接最小维持时长，单位毫秒 -->
+            <property name="hibernate.hikari.idleTimeout" value="500000"/>
+            <!-- 连接最大维持时长 -->
+            <property name="hibernate.hikari.maxLifetime" value="600000"/>
+
+            <!-- 驱动程序 -->
+            <property name="hibernate.hikari.dataSource.driverClassName"
+                      value="com.mysql.cj.jdbc.Driver"/>
+
+            <!-- 连接地址 -->
+            <property name="hibernate.hikari.dataSource.jdbcUrl"
+                      value="jdbc:mysql://10.241.117.38:3306/neo?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;autoReconnectForPools=true"/>
+
+            <!-- 用户名 -->
+            <property name="hibernate.hikari.dataSource.username" value="root"/>
+
+            <!-- 密码 -->
+            <property name="hibernate.hikari.dataSource.password" value="FTCF3T8tJ2AxaEjL"/>
+
+            <!-- 显示执行SQL -->
+            <property name="hibernate.show_sql" value="true"/>
+
+            <!-- 格式化SQL -->
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

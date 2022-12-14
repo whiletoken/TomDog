@@ -1,0 +1,2 @@
+dubboProviderProfiler=dubbo.com.spring.DubboProviderProfilerFilter
+dubboConsumerProfiler=dubbo.com.spring.DubboConsumerProfilerFilter

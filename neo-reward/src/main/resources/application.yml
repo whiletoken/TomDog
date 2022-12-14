@@ -1,0 +1,28 @@
+# 米游社的API列表
+bbs:
+  # 米游社的Salt
+  salt: fd3ykrh7o1j54g581upo1tvpam0dsgtf
+  salt_web: 14bmu1mz0yuljprsfgpvjh3ju2ni468r
+  salt_web_old: h8w582wxwgqvahcdkpvdhbh2w9casgfl
+  # 米游社的版本
+  version: 2.7.0  # Slat和Version相互对应
+  version_old: 2.3.0
+  # 米游社的客户端类型
+  client_type: 2  # 1为ios 2为安卓
+  client_type_web: 5  # 4为pc web 5为mobile web
+  cookie_url: https://webapi.account.mihoyo.com/Api/cookie_accountinfo_by_loginticket?login_ticket=
+  cookie_url2: https://api-takumi.mihoyo.com/auth/api/getMultiTokenByLoginTicket?login_ticket=&token_types=3&uid=
+  tasks_list: https://bbs-api.mihoyo.com/apihub/sapi/getUserMissionsState  # 获取任务列表
+  sign_url: https://bbs-api.mihoyo.com/apihub/sapi/signIn?gids=  # post
+  list_url: https://bbs-api.mihoyo.com/post/api/getForumPostList?forum_id=26&is_good=false&is_hot=false&page_size=20&sort_type=1
+  detail_url: https://bbs-api.mihoyo.com/post/api/getPostFull?post_id=
+  share_url: https://bbs-api.mihoyo.com/apihub/api/getShareConf?entity_id=&entity_type=1
+  like_url: https://bbs-api.mihoyo.com/apihub/sapi/upvotePost  # post json
+
+# 原神自动签到相关的设置
+genshin:
+  act_id: e202009291139501
+  account_info_url: https://api-takumi.mihoyo.com/binding/api/getUserGameRolesByCookie?game_biz=hk4e_cn
+  sign_list_url: https://api-takumi.mihoyo.com/event/sign_reward/home?act_id=
+  is_sign_url: https://api-takumi.mihoyo.com/event/sign_reward/info?act_id=&region=&uid=
+  sign_url: https://api-takumi.mihoyo.com/event/sign_reward/sign

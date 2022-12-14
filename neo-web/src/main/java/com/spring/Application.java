@@ -17,8 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  * @author willian
  **/
-@SpringBootApplication(scanBasePackages = {"com.tomdog.spring"},
-        exclude = org.redisson.spring.starter.RedissonAutoConfiguration.class)
+@SpringBootApplication(scanBasePackages = {"com.tomdog.spring"})
 @EnableAsync
 @MapperScan(basePackages = {"com.tomdog.spring.dao"})
 @EnableTransactionManagement

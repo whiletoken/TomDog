@@ -1,0 +1,15 @@
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+.idea
+
+*/target
+*/.DS_Store
+*/*.iml
+*.iml
+
+.fleet
+
+logs%
